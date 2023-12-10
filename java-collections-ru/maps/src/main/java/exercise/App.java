@@ -6,11 +6,11 @@ import java.util.Map;
 // BEGIN
 public class App {
     public static Map<String, Integer> getWordCount(String sentence) {
-        if (sentence.length == 0) {
-            return (new HashMap<String, Integer>());
-
         String[] individualWords = sentence.toLowerCase().split(" ");
         Map<String, Integer> dictionary = new HashMap<>();
+
+        if (sentence.length == 0) {
+            return dictionary;
 
         for (String word : individualWords) {
             Integer counter = dictionary.getOrDefault(word, 0);
@@ -20,16 +20,17 @@ public class App {
         return dictionary;
     }
 
-    public static String toString(Map<String, Integer> dictionary) {
+    public static String toString(Map<String, Integer> dictionary2) {
         String emptyLine = "\\{\\}";
         
-        if (dictionary.isEmpty()) {
+        if (dictionary2.isEmpty()) {
             return emptyLine;
         }
+
         String dictionaryText = "";
 
-        for (Map.Entry<String, Integer> entry : dictionary.entrySet()) {
-            dictionaryText += ("  " + entry.getKey() + ": " + entry.getValue() + "\n");
+        for (Map.Entry<String, Integer> entry : dictionary2.entrySet()) {
+            dictionaryText = dictionaryText + ("  " + entry.getKey() + ": " + entry.getValue() + "\n");
         }
         String fullLine = "\\{\n" + dictionaryText + "\\}";
 
