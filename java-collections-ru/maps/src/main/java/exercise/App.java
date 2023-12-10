@@ -23,7 +23,7 @@ public class App {
     public static String toString(Map<String, Integer> catalog) {
         String emptyLine = "\\{\\}";
         if (catalog.isEmpty()) {
-            return emptyLine.substring(1, emptyLine.length() - 1);
+            return emptyLine;
         }
         String catalogText = "";
 
@@ -32,7 +32,7 @@ public class App {
         }
         String fullLine = "\\{\n" + catalogText + "\\}";
 
-        return fullLine.substring(1, fullLine.length() - 1);
+        return fullLine;
     }
 }
 //END
