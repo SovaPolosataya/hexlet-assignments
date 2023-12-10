@@ -17,13 +17,16 @@ public class App {
         return dictionary;
     }
 
-        public static void toString(Map<String, Integer> dictionary) {
-        System.out.println("\\{");
+        public static String toString(Map<String, Integer> dictionary) {
+        if (dictionary.isEmpty) {
+            return "{}"
+        }
+        String mumumu= dictionaryText;
 
         for (Map.Entry<String, Integer> entry : dictionary.entrySet()) {
-            System.out.println("  " + entry.getKey() + ": " + entry.getValue());
+           dictionaryText += ("  " + entry.getKey() + ": " + entry.getValue() + "\n");
         }
-        System.out.println("\\}");
+        return "{\n" + dictionaryText + "\n}"
     }
 }
 //END
