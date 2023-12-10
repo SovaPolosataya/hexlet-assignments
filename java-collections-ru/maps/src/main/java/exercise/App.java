@@ -17,7 +17,7 @@ public class App {
         return dictionary;
     }
 
-        public static String toString(Map<String, Integer> dictionary) {
+        public static void toString(Map<String, Integer> dictionary) {
         System.out.println("\\{");
 
         for (Map.Entry<String, Integer> entry : dictionary.entrySet()) {
