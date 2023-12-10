@@ -22,14 +22,14 @@ public class App {
 
         public static String toString(Map<String, Integer> catalog) {
         if (catalog.isEmpty()) {
-            return '{}';
+            return "\\{\\}";
         }
         String catalogText = "";
 
         for (Map.Entry<String, Integer> entry : catalog.entrySet()) {
            catalogText += ("  " + entry.getKey() + ": " + entry.getValue() + "\n");
         }
-        return '{' + '\n' + catalogText + '}';
+        return "\\{\n" + catalogText + "\\}";
     }
 }
 //END
