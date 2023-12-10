@@ -21,7 +21,7 @@ public class App {
         if (dictionary.isEmpty()) {
             return "\\{\\}";
         }
-        String dictionaryText = dictionaryText;
+        String dictionaryText = "";
 
         for (Map.Entry<String, Integer> entry : dictionary.entrySet()) {
            dictionaryText = dictionaryText + ("  " + entry.getKey() + ": " + entry.getValue() + "\n");
