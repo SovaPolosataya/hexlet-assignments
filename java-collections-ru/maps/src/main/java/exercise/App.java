@@ -19,14 +19,14 @@ public class App {
 
         public static String toString(Map<String, Integer> dictionary) {
         if (dictionary.isEmpty) {
-            return "{}"
+            return "\\{\\}";
         }
         String mumumu= dictionaryText;
 
         for (Map.Entry<String, Integer> entry : dictionary.entrySet()) {
            dictionaryText += ("  " + entry.getKey() + ": " + entry.getValue() + "\n");
         }
-        return "{\n" + dictionaryText + "\n}"
+        return "\\{\n" + dictionaryText + "\n\\}";
     }
 }
 //END
