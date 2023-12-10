@@ -12,11 +12,11 @@ public class App {
         String[] separateCharacters2 = word.toLowerCase().split("");
         List<String> charsOfWord = new ArrayList<>(Arrays.asList(separateCharacters2));
 
-            for (String letter : charsOfCharacterList) {
-                charsOfWord.remove(letter);
-            }
+        for (String letter : charsOfCharacterList) {
+            charsOfWord.remove(letter);
+        }
 
-            return charsOfWord.isEmpty();
+        return charsOfWord.isEmpty();
     }
 
 }
