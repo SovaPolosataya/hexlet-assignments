@@ -8,7 +8,7 @@ public class App {
     public static Map<String, Integer> getWordCount(String sentence) {
         String[] individualWords = sentence.toLowerCase().split(" ");
         Map<String, Integer> dictionary = new HashMap<>();
-        if (sentence.equals("")) {
+        if (individualWords.length(0)) {
             return dictionary;
         }
 
@@ -20,16 +20,16 @@ public class App {
         return dictionary;
     }
 
-        public static String toString(Map<String, Integer> dictionary) {
-        if (dictionary.isEmpty()) {
-            return "\\{\\}";
+        public static String toString(Map<String, Integer> catalog) {
+        if (catalog.isEmpty()) {
+            return '{}';
         }
-        String dictionaryText = "";
+        String catalogText = "";
 
-        for (Map.Entry<String, Integer> entry : dictionary.entrySet()) {
-           dictionaryText = dictionaryText + ("  " + entry.getKey() + ": " + entry.getValue() + "\n");
+        for (Map.Entry<String, Integer> entry : catalog.entrySet()) {
+           catalogText += ("  " + entry.getKey() + ": " + entry.getValue() + "\n");
         }
-        return "\\{\n" + dictionaryText + "\\}";
+        return '{' + '\n' + catalogText + '}';
     }
 }
 //END
