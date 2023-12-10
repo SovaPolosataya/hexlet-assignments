@@ -8,6 +8,9 @@ public class App {
     public static Map<String, Integer> getWordCount(String sentence) {
         String[] individualWords = sentence.toLowerCase().split(" ");
         Map<String, Integer> dictionary = new HashMap<>();
+        if (sentence.equals("")) {
+            return dictionary;
+        }
 
         for (String word : individualWords) {
             Integer counter = dictionary.getOrDefault(word, 0);
@@ -26,7 +29,7 @@ public class App {
         for (Map.Entry<String, Integer> entry : dictionary.entrySet()) {
            dictionaryText = dictionaryText + ("  " + entry.getKey() + ": " + entry.getValue() + "\n");
         }
-        return "\\{\n" + dictionaryText + "\n\\}";
+        return "\\{\n" + dictionaryText + "\\}";
     }
 }
 //END
