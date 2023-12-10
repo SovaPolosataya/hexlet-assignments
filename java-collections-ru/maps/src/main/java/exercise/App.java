@@ -18,13 +18,13 @@ public class App {
     }
 
         public static String toString(Map<String, Integer> dictionary) {
-        if (dictionary.isEmpty) {
+        if (dictionary.isEmpty()) {
             return "\\{\\}";
         }
-        String mumumu= dictionaryText;
+        String dictionaryText = dictionaryText;
 
         for (Map.Entry<String, Integer> entry : dictionary.entrySet()) {
-           dictionaryText += ("  " + entry.getKey() + ": " + entry.getValue() + "\n");
+           dictionaryText = dictionaryText + ("  " + entry.getKey() + ": " + entry.getValue() + "\n");
         }
         return "\\{\n" + dictionaryText + "\n\\}";
     }
