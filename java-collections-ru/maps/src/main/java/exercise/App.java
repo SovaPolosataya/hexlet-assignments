@@ -6,11 +6,11 @@ import java.util.Map;
 // BEGIN
 public class App {
     public static Map<String, Integer> getWordCount(String sentence) {
-        String[] individualWords = sentence.toLowerCase.split(" ");
+        String[] individualWords = sentence.toLowerCase().split(" ");
         Map<String, Integer> dictionary = new HashMap<>();
 
         for (String word : individualWords) {
-            String counter = dictionary.getOrDefault(word, 0);
+            Integer counter = dictionary.getOrDefault(word, 0);
             dictionary.put(word, counter + 1);
         }
 
