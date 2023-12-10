@@ -7,7 +7,7 @@ import java.util.Map;
 public class App {
     public static Map<String, Integer> getWordCount(String sentence) {
         if (sentence.length == 0) {
-            return (new HashMap<String, Integer>(0));
+            return (new HashMap<String, Integer>());
 
         String[] individualWords = sentence.toLowerCase().split(" ");
         Map<String, Integer> dictionary = new HashMap<>();
@@ -20,17 +20,18 @@ public class App {
         return dictionary;
     }
 
-    public static String toString(Map<String, Integer> catalog) {
+    public static String toString(Map<String, Integer> dictionary) {
         String emptyLine = "\\{\\}";
-        if (catalog.isEmpty()) {
+        
+        if (dictionary.isEmpty()) {
             return emptyLine;
         }
-        String catalogText = "";
+        String dictionaryText = "";
 
-        for (Map.Entry<String, Integer> entry : catalog.entrySet()) {
-            catalogText += ("  " + entry.getKey() + ": " + entry.getValue() + "\n");
+        for (Map.Entry<String, Integer> entry : dictionary.entrySet()) {
+            dictionaryText += ("  " + entry.getKey() + ": " + entry.getValue() + "\n");
         }
-        String fullLine = "\\{\n" + catalogText + "\\}";
+        String fullLine = "\\{\n" + dictionaryText + "\\}";
 
         return fullLine;
     }
