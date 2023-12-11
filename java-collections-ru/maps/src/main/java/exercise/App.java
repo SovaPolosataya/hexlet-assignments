@@ -9,7 +9,7 @@ public class App {
         String[] individualWords = sentence.toLowerCase().split(" ");
         Map<String, Integer> dictionary = new HashMap<>();
 
-        if (sentence.length == 0) {
+        if (sentence.isEmpty()) {
             return dictionary;
 
         for (String word : individualWords) {
@@ -21,18 +21,17 @@ public class App {
     }
 
     public static String toString(Map<String, Integer> dictionary2) {
-        String emptyLine = "\\{\\}";
+        String emptyLine = "{}";
+        String dictionaryText = "";
         
         if (dictionary2.isEmpty()) {
             return emptyLine;
         }
 
-        String dictionaryText = "";
-
         for (Map.Entry<String, Integer> entry : dictionary2.entrySet()) {
             dictionaryText = dictionaryText + ("  " + entry.getKey() + ": " + entry.getValue() + "\n");
         }
-        String fullLine = "\\{\n" + dictionaryText + "\\}";
+        String fullLine = "{\n" + dictionaryText + "}";
 
         return fullLine;
     }
