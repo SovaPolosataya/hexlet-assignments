@@ -2,6 +2,7 @@ package exercise;
 
 import java.util.Map;
 import java.util.HashMap;
+import java.lang.StringBuilder;
 
 public class App {
     public static Map<String, Integer> getWordCount(String sentence) {
