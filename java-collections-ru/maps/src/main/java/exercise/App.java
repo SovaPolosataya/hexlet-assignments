@@ -2,7 +2,6 @@ package exercise;
 
 import java.util.Map;
 import java.util.HashMap;
-import java.lang.StringBuilder;
 
 public class App {
     public static Map<String, Integer> getWordCount(String sentence) {
@@ -27,11 +26,10 @@ public class App {
             return emptyLine;
         }
 
-        StringBuilder dictionaryText = new StringBuilder();
+        String dictionaryText = "";
 
         for (Map.Entry<String, Integer> entry : dictionary.entrySet()) {
-            dictionaryText.append("  ").append(entry.getKey()).append(": ")
-                    .append(entry.getValue()).appand("\n");
+            dictionaryText = dictionaryText + "  " + entry.getKey() + ": " + entry.getValue() + "\n";
         }
         String fullLine = "{\n" + dictionaryText + "}";
 
