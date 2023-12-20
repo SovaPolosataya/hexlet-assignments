@@ -9,17 +9,16 @@ public class App {
     public static List<Map<String, String>> findWhere(List<Map<String, String>> books, Map<String, String> parameters) {
         List<Map<String, String>> newBooks = new ArrayList<>();
         Map<String, String> isBook;
-        var entries = parameters.entrySet();
-        boolean coincident = false;
 
         for (var book : books) {
             isBook = book;
+            boolean coincident = true;
 
-            for (var entry : entries) {
-                if (!isBook.containsKey(entry.getKey()) || !isBook.containsValue(entry.getValue())) {
+            for (Map.Entry<String, String> parameter : parameters.entrySet()) {
+                if (!isBook.containsKey(parameter.getKey()) || !isBook.containsValue(parameter.getValue())) {
+                    coincident = false;
                     break;
                 }
-                coincident = true;
             }
             if (coincident) {
                 newBooks.add(isBook);
