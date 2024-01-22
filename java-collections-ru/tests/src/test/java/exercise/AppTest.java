@@ -16,12 +16,12 @@ class AppTest {
 
         numbers.addAll(Arrays.asList(1, 2, 3, 4, 5, 6));
 
-        assertThat(testNumbers).isEquals(App.take(numbers, 0));
+        assertThat(testNumbers).isEqualTo(App.take(numbers, 0));
 
         testNumbers.addAll(Arrays.asList(1, 2, 3));
         assertThat(testNumbers).isEqualTo(App.take(numbers, 3));
 
-        assertThat(numbers).isEquals(App.take(numbers, 10));
+        assertThat(numbers).isEqualTo(App.take(numbers, 10));
         // END
     }
 }
