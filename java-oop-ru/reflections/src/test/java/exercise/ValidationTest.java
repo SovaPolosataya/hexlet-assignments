@@ -28,13 +28,14 @@ class ValidationTest {
     }
 
     // BEGIN
+    @Test
     void testAdvancedValidate() {
         Address address4 = new Address("Russia", "Kaliningrad", "Kamskaya", "52", "1");
         Map<String, List<String>> result4 = Validator.advancedValidate(address4);
         Map<String, List<String>> expected4 = Map.of();
         assertThat(result4).isEqualTo(expected4);
 
-        Address address5 = new Address(null, "Berlin", "Nu", "35", "7");
+        Address address5 = new Address(null, "Berlin", null, "7", null);
         Map<String, List<String>> result5 = Validator.advancedValidate(address5);
         List<String> country1 = List.of("can not be null", "length less than 3");
         List<String> street1 = List.of("can not be null", "length less than 5");
@@ -42,7 +43,7 @@ class ValidationTest {
         Map<String, List<String>> expected5 = Map.of("country", country1, "street", street1, "houseNumber", houseNumber1);
         assertThat(result5).isEqualTo(expected5);
 
-        Address address6 = new Address(null, "London", "1-st street", "5", "1");
+        Address address6 = new Address("China", "Gu", "Nu", "35", "7");
         Map<String, List<String>> result6 = Validator.advancedValidate(address6);
         List<String> city2 = List.of("length less than 3");
         List<String> street2 = List.of("length less than 5");
