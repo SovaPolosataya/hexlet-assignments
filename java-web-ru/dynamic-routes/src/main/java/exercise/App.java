@@ -28,7 +28,7 @@ public final class App {
                     .orElse(null);
 
             if (company == null) {
-                throw new NotFoundResponse("Company not found.");
+                throw new NotFoundResponse("Company not found");
             }
             ctx.json(company);
         });
