@@ -39,13 +39,6 @@
                     </label>
                   </div>
 
-                  <div>
-                    <label>
-                      Подтверждение пароля
-                      <input type="password" required name="passwordConfirmation" placeholder="Подтвердите ваш пароль"/>
-                    </label>
-                  </div>
-
                   <input type="submit" value="Зарегистрировать" />
                 </form>
               </main>
