@@ -37,11 +37,10 @@ public class ProductsController {
     public Product create(@RequestBody Product product) {
         List<Product> products = productRepository.findAll();
 
-        for (Product prod : products) {
-            if (prod.equals(product)) {
+        if (products.contains(product)) {
             throw new ResourceAlreadyExistsException("409");
-            }
         }
+
         productRepository.save(product);
         return product;
     }
