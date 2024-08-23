@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 import exercise.exception.ResourceNotFoundException;
 import exercise.repository.ProductRepository;
 import jakarta.validation.Valid;
-import exercise.repository.CategoryRepository;
+//import exercise.repository.CategoryRepository;
 import exercise.model.Product;
 import exercise.model.Category;
 
@@ -35,8 +35,8 @@ public class ProductsController {
     private ProductMapper productMapper;
 
     // BEGIN
-    @Autowired
-    private CategoryRepository categoryRepository;
+//    @Autowired
+//    private CategoryRepository categoryRepository;
 
     @GetMapping(path = "")
     public List<ProductDTO> index() {
@@ -73,15 +73,15 @@ public class ProductsController {
     @PutMapping(path = "/{id}")
     @ResponseStatus(HttpStatus.OK)
     public ProductDTO update(@Valid @RequestBody ProductUpdateDTO dto, @PathVariable Long id) {
-        Long categoryId = dto.getCategoryId().get();
+//        Long categoryId = dto.getCategoryId().get();
         Product product = productRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Product with id " + id + " not found"));
 
-        Category category = categoryRepository.findById(categoryId)
-                .orElseThrow(() -> new ResourceNotFoundException("Product with id " + categoryId + " not found"));
+//        Category category = categoryRepository.findById(categoryId)
+//                .orElseThrow(() -> new ResourceNotFoundException("Product with id " + categoryId + " not found"));
 
         productMapper.update(dto, product);
-        product.setCategory(category);
+        //product.setCategory(category);
         productRepository.save(product);
 
         ProductDTO productDto = productMapper.map(product);
