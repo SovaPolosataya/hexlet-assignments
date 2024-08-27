@@ -21,7 +21,7 @@ public class ProductSpecification {
         return (root, query, cb) ->
                 titleCont == null ? cb.conjunction()
 //                        : cb.like(root.get("title"), titleCont.toLowerCase());
-                        : cb.like(cb.lower(root.get("title")), "%" + substring + "%");
+                        : cb.like(cb.lower(root.get("title")), "%" + titleCont + "%");
     }
 
     public Specification<Product> withCategoryId(Long categoryId) {
