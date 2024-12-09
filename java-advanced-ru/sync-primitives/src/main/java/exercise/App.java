@@ -6,8 +6,8 @@ class App {
         // BEGIN
         SafetyList safetyList = new SafetyList();
 
-        ListThread thread1 = new ListThread(safetyList);
-        ListThread thread2 = new ListThread(safetyList);
+        Thread thread1 = new Thread(new ListThread(safetyList));
+        Thread thread2 = new Thread(new ListThread(safetyList));
 
         thread1.start();
         thread2.start();

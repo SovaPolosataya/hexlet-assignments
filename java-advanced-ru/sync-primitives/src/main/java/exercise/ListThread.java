@@ -10,10 +10,16 @@ class ListThread extends Thread {
 
     @Override
     public void run() {
-        int num = 0;
+//        int num = 0;
         for (int i = 0; i < 1000; i++) {
-            num = (int)(Math.random() * 100);
-            safetyList.add(num);
+            try {
+                Thread.sleep(1);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+//            num = (int)(Math.random() * 100);
+//            safetyList.add(num);
+            safetyList.add(i);
         }
     }
 }
